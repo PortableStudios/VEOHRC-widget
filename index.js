@@ -8,6 +8,8 @@ $("input").on('blur', function(event) {
 });
 $("textarea").on('blur', function(event) {
 	$("header").removeClass('hidden')
+	$(".what_info").addClass('hidden')
 }).on('focus', function(event) {
+	$(".what_info").removeClass('hidden')
 	$("header").addClass('hidden')
 });

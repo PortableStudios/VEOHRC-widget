@@ -15,10 +15,14 @@
 			<fieldset id="collapse">
 				<label><span class="label">Your name</span><input type="text" name="" value="" placeholder=""></label>
 				<label><span class="label">Your email address</span><input type="email" name="" value="" placeholder=""></label>
+				<!-- insert Phone number (v2) -->
 				<label for="what">What happened?</label>
+				<p class="hidden what_info">Describe what happened, and where it happened. Just a sentence or two is fine!</p>
 				<textarea name="what" id="what"></textarea>
-				<label for="where">Where did it happen?</label>
-				<textarea name="where" id="where"></textarea>
+				<label><span class="label">Postcode</span><input type="text" name="" value="" placeholder=""></label>
+				<!-- insert Postcode field. consider http://v0.postcodeapi.com.au/suburbs/?q=****&state=vic api 
+					or http://api.geonames.org/postalCodeLookupJSON?formatted=true&placename=*****&country=AU&username=demo&style=full&adminCode1=VIC
+				-->
 			</fieldset>
 			<button type="submit">Report it.</button>
 		</form>
@@ -31,6 +35,7 @@
 					Victorian Equal Opportunity<br/>
 					<span class="light">& Human Rights Commission</span>
 				</small>
+				<!-- insert ICV logo here -->
 			</p>
 		</footer>
 	</main>
