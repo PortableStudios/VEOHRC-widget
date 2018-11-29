@@ -31,6 +31,14 @@ html{
 			height: auto;
 			padding: 8px;
 			margin: 0 auto;
+			img.f_left{
+				float: left;
+				padding-right: 8px;
+			}
+			img.f_right{
+				float: right;
+				padding-left: 8px;
+			}
 			h1{
 				font-weight: 300;
 				font-size: 24px;

@@ -1,9 +1,13 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>VEOHRC Third Party Widget</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">	
+    <script src='https://www.google.com/recaptcha/api.js?render=6LfGRX0UAAAAAINiXRMozu84LiFGNjdKn-QRwgr4'></script>
 </head>
 <body>
 	<main>
@@ -24,13 +28,15 @@
 					or http://api.geonames.org/postalCodeLookupJSON?formatted=true&placename=*****&country=AU&username=demo&style=full&adminCode1=VIC
 				-->
 			</fieldset>
-			<button type="submit">Report it.</button>
+			<button class="g-recaptcha" data-sitekey="6LfGRX0UAAAAAINiXRMozu84LiFGNjdKn-QRwgr4" data-callback="onSubmit" type="submit" id="submit_form">Report it.</button>
 		</form>
+		
 		<p class="submitted">
 			<strong>Thank you for your submission.</strong> We will endeavor to get in contact with you as soon as possible. A copy of this form has been sent to your provided email address for your record.
 		</p>
 		<footer>
 			<p>
+				<img class="f_left" src="./veohrc_logo.svg" width="32"/>
 				<small>
 					Victorian Equal Opportunity<br/>
 					<span class="light">& Human Rights Commission</span>

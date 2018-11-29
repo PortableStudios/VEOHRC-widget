@@ -13,3 +13,20 @@ $("textarea").on('blur', function(event) {
 	$(".what_info").removeClass('hidden')
 	$("header").addClass('hidden')
 });
+
+$("#contact").submit(function(event) {
+	event.preventDefault()
+	console.log('submit')
+});
+
+function onSubmit() {
+    console.log('captcha submit');
+}
+
+grecaptcha.ready(function() {
+	grecaptcha.execute('6LfGRX0UAAAAAINiXRMozu84LiFGNjdKn-QRwgr4', {action: 'onSubmit'})
+	.then(function(token) {
+	// Verify the token on the server.
+		console.log('captcha')
+	});
+});
