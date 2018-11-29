@@ -14,6 +14,7 @@ $orig_btn: #ED6565;
 $icv_lt_grey: #f7f7f7;
 $icv_green: #51ab75;
 $icv_dk_grey: #545454;
+$dk_red: #ED6565;
 
 html{
 	margin: 0;
@@ -110,6 +111,9 @@ html{
 					font-weight: 300;
 					outline: none;
 					background: url('./pen.svg') no-repeat right 5px;
+					&.error{
+						border-bottom: 1px solid $dk_red;
+					}
 				}
 				textarea{
 					transition: height .2s;
@@ -119,12 +123,17 @@ html{
 					font-weight: 500;
 					padding: 5px 0;
 					height: 21px;
+					&.error{
+						border-top: 1px solid $dk_red;
+					}
 				}
 
 				textarea:focus{
 					height: 200px;
 				}
 				button{
+					position: relative;
+					z-index: 10;
 					transition: background 0.2s;
 					background: transparent;
 					border-radius: 8px;
@@ -144,6 +153,12 @@ html{
 					margin: 0;
 					padding: 0;
 					border: none;
+				}
+				.error{
+					color: $dk_red;
+					font-size: 0.8rem;
+					position: relative;
+					margin-top: 0;
 				}
 			}
 			.light{

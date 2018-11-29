@@ -7,7 +7,7 @@
     <title>VEOHRC Third Party Widget</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">	
-    <script src='https://www.google.com/recaptcha/api.js?render=6LfGRX0UAAAAAINiXRMozu84LiFGNjdKn-QRwgr4'></script>
+    <!-- <script src='https://www.google.com/recaptcha/api.js?render=6LfGRX0UAAAAAINiXRMozu84LiFGNjdKn-QRwgr4'></script> -->
 </head>
 <body>
 	<main>
@@ -17,18 +17,23 @@
 		</header>
 		<form id="contact">
 			<fieldset id="collapse">
-				<label><span class="label">Your name</span><input type="text" name="" value="" placeholder=""></label>
-				<label><span class="label">Your email address</span><input type="email" name="" value="" placeholder=""></label>
+				<label><span class="label">Your name</span><input id="name" name="name" minlength="2" type="text" required></label>
+				<label><span class="label">Your email address</span><input required type="email" id="email" name="email" value="" placeholder=""></label>
 				<!-- insert Phone number (v2) -->
 				<label for="what">What happened?</label>
 				<p class="hidden what_info">Describe what happened, and where it happened. Just a sentence or two is fine!</p>
-				<textarea name="what" id="what"></textarea>
-				<label><span class="label">Postcode</span><input type="text" name="" value="" placeholder=""></label>
+				<textarea required name="what_happened" id="what"></textarea>
+				<label><span class="label">Where was it? <small>(Postcode)</small></span><input minlength="4" maxlength="4"  required type="text" id="postcode" name="postcode" value="" placeholder=""></label>
 				<!-- insert Postcode field. consider http://v0.postcodeapi.com.au/suburbs/?q=****&state=vic api 
 					or http://api.geonames.org/postalCodeLookupJSON?formatted=true&placename=*****&country=AU&username=demo&style=full&adminCode1=VIC
 				-->
+
+				<!-- TODO:
+						checkbox for privacy!
+				-->
 			</fieldset>
-			<button class="g-recaptcha" data-sitekey="6LfGRX0UAAAAAINiXRMozu84LiFGNjdKn-QRwgr4" data-callback="onSubmit" type="submit" id="submit_form">Report it.</button>
+			<button type="submit" id="submit_form">Report it.</button><!-- 
+			<button class="g-recaptcha" data-sitekey="6LfGRX0UAAAAAINiXRMozu84LiFGNjdKn-QRwgr4" data-callback="onSubmit" type="submit" id="submit_form">Report it.</button> -->
 		</form>
 		
 		<p class="submitted">
