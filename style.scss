@@ -59,6 +59,10 @@ html{
 						display: block;
 					}
 				}
+				&.failed{
+					display: none;
+					color: $dk_red;
+				}
 			}
 			header, .what_info{
 				max-height: 200px;

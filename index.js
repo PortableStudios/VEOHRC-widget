@@ -1,6 +1,6 @@
 import './style.scss';
 import $ from "jquery";
-import validate from "jquery-validation";
+import validate from "jquery-validation/dist/jquery.validate.min.js";
 
 $(function() {
 	$("input").on('blur', function(event) {
@@ -21,7 +21,33 @@ $(function() {
 	// 	event.preventDefault()
 	// });
 
-	$("#contact").validate();
+	function ajaxSubmit(form){
+		// fire ajax here
+		console.log($(form).serialize());
+		
+		// on success
+		ajaxSuccess()
+
+		// on fail
+		//ajaxFail()
+	}
+
+	function ajaxSuccess(){
+		$("#contact").slideUp()
+	    $(".submitted").fadeIn();		
+	}
+
+	function ajaxFail(){
+	    $(".failed").fadeIn();		
+	}
+
+	$("#contact").validate({
+	  submitHandler: function(form) {
+	    ajaxSubmit(form);
+	  }
+	});
+
+
 
 	function onSubmit() {
 	    console.log('captcha submit');
