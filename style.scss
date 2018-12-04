@@ -86,8 +86,8 @@ html{
 					font-size: 18px;
 					font-weight: 300;
 					position: relative;
-						perspective: 100px;
-    					perspective-origin: left;
+					perspective: 100px;
+    				perspective-origin: left;
 					span.label{
 						position: absolute;
 						transition: transform 0.1s;	
@@ -104,11 +104,13 @@ html{
 						width: calc(100% - 20px);
 						line-height: 30px;
 						input{
-							margin-left: -20px;
+							margin-left: -18px;
 						}
 					}
 				}
-				input, textarea{
+				input[type="text"],
+				input[type="email"],
+				textarea{
 					position: absolute;
 					top: 0;
 					left: 0;
@@ -139,6 +141,7 @@ html{
 					height: 21px;
 					&.error{
 						border-top: 1px solid $dk_red;
+						top:0;
 					}
 				}
 
@@ -173,6 +176,11 @@ html{
 					font-size: 0.8rem;
 					position: relative;
 					margin-top: 0;
+					top: 30px;
+				}
+				#what-error{
+					top:0;
+					height:10px;
 				}
 			}
 			.light{

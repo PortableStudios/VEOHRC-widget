@@ -16,12 +16,8 @@ $(function() {
 		$("header").addClass('hidden')
 	});
 
-	// $("#contact").submit(function(event) {
-	// 	console.log(event)
-	// 	event.preventDefault()
-	// });
-
 	function ajaxSubmit(form){
+		
 		// fire ajax here
 		console.log($(form).serialize());
 		
