@@ -1,9 +1,17 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>VEOHRC Third Party Widget</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">	
+    <!--
+    	need to set up server to use:
+    	X-Frame-Options: allow-from https://example.com/
+    -->
+    <!-- <script src='https://www.google.com/recaptcha/api.js?render=6LfGRX0UAAAAAINiXRMozu84LiFGNjdKn-QRwgr4'></script> -->
 </head>
 <body>
 	<main>
@@ -11,26 +19,44 @@
 			<h1>Have you been treated unfairly in Victoria?</h1>
 			<p class="intro">Report it here confidentially and the Victorian Equal Opportunity & Human Rights Comission will get in touch with you.</p>
 		</header>
-		<form id="contact">
+		<form id="contact" method="post" >
 			<fieldset id="collapse">
-				<label><span class="label">Your name</span><input type="text" name="" value="" placeholder=""></label>
-				<label><span class="label">Your email address</span><input type="email" name="" value="" placeholder=""></label>
+				<label><span class="label">Your name</span><input id="name" name="name" minlength="2" type="text" required></label>
+				<label><span class="label">Your email address</span><input required type="email" id="email" name="email" value="" placeholder=""></label>
+				<!-- insert Phone number (v2) -->
 				<label for="what">What happened?</label>
-				<textarea name="what" id="what"></textarea>
-				<label for="where">Where did it happen?</label>
-				<textarea name="where" id="where"></textarea>
+				<p class="hidden what_info">Describe what happened, and where it happened. Just a sentence or two is fine!</p>
+				<textarea required name="what_happened" id="what"></textarea>
+				<label><span class="label">Where was it? <small>(Postcode)</small></span><input minlength="4" maxlength="4"  required type="text" id="postcode" name="postcode" value="" placeholder=""></label>
+				<!-- insert Postcode field. consider http://v0.postcodeapi.com.au/suburbs/?q=****&state=vic api 
+					or http://api.geonames.org/postalCodeLookupJSON?formatted=true&placename=*****&country=AU&username=demo&style=full&adminCode1=VIC
+				-->
 			</fieldset>
-			<button type="submit">Report it.</button>
+			<fieldset class="showconf">
+				<label class="checkbox">
+					<input type="checkbox" name="dont_contact_me" />
+					<small>Do not contact me about my report</small>
+				</label>
+			<button type="submit" id="submit_form">Report it.</button>
+			<!-- 
+			<button class="g-recaptcha" data-sitekey="6LfGRX0UAAAAAINiXRMozu84LiFGNjdKn-QRwgr4" data-callback="onSubmit" type="submit" id="submit_form">Report it.</button> -->
 		</form>
+		
 		<p class="submitted">
-			<strong>Thank you for your submission.</strong> We will endeavor to get in contact with you as soon as possible. A copy of this form has been sent to your provided email address for your record.
+			<strong>Thank you!</strong> your report has been submitted. You will be sent a copy of your report.
+		</p>
+
+		<p class="failed">
+			<strong>There was a problem submitting you form.</strong> Please try again in a few minutes.
 		</p>
 		<footer>
 			<p>
+				<img class="f_left" src="./veohrc_logo.svg" width="32"/>
 				<small>
 					Victorian Equal Opportunity<br/>
 					<span class="light">& Human Rights Commission</span>
 				</small>
+				<!-- insert ICV logo here -->
 			</p>
 		</footer>
 	</main>

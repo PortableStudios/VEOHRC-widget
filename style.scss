@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300,500');
 
+
+/*
+TODO:
+match ICV colour scheme
+*/
+
+$orig_bg: #333;
+$orig_txt: #fff;
+$orig_btn: #ED6565;
+
+
+$icv_lt_grey: #f7f7f7;
+$icv_green: #51ab75;
+$icv_dk_grey: #545454;
+$dk_red: #ED6565;
+
 html{
 	margin: 0;
 	padding: 0;
@@ -8,14 +24,22 @@ html{
 		padding: 0;
 		-webkit-font-smoothing: antialiased;
   		-moz-osx-font-smoothing: grayscale;
-		background-color: #333;
-		color: #fff;
+		background-color: $icv_lt_grey;
+		color: $icv_dk_grey;
 		font-family: 'Quicksand', sans-serif;
 		main{
 			max-width: 284px;
 			height: auto;
 			padding: 8px;
 			margin: 0 auto;
+			img.f_left{
+				float: left;
+				padding-right: 8px;
+			}
+			img.f_right{
+				float: right;
+				padding-left: 8px;
+			}
 			h1{
 				font-weight: 300;
 				font-size: 24px;
@@ -25,7 +49,7 @@ html{
 				font-size: 14px;
 				margin-bottom: 0;
 				&.intro{
-					margin-bottom: 24px
+					margin-bottom: 8px
 				}
 				&.submitted{
 					font-size: 20px;
@@ -35,14 +59,21 @@ html{
 						display: block;
 					}
 				}
+				&.failed{
+					display: none;
+					color: $dk_red;
+				}
 			}
-			header{
+			header, .what_info{
 				max-height: 200px;
 				overflow: hidden;
 				transition: max-height 0.2s;
 				&.hidden{
 					max-height:0px;
 				}
+			}
+			.what_info{
+				margin-top:0;
 			}
 			form{
 				//max-height: 60px;
@@ -66,6 +97,16 @@ html{
 						transition: transform 0.1s;	
 						transform: translate3d(0,-100%,-50px);
 					}
+					&.checkbox{
+						position: relative;
+						margin-left:20px;
+						font-size: 1rem;
+						width: calc(100% - 20px);
+						line-height: 30px;
+						input{
+							margin-left: -20px;
+						}
+					}
 				}
 				input, textarea{
 					position: absolute;
@@ -77,46 +118,61 @@ html{
 					width: 100%;
 					height: 30px;
 					border: none;
-					border-bottom: 1px solid #fff;
-					color: #fff;
+					border-bottom: 1px solid $icv_dk_grey;
+					color: $icv_dk_grey;
 					font-family: 'Quicksand', sans-serif;
 					font-size: 18px;
 					font-weight: 300;
 					outline: none;
 					background: url('./pen.svg') no-repeat right 5px;
+					&.error{
+						border-bottom: 1px solid $dk_red;
+					}
 				}
 				textarea{
 					transition: height .2s;
 					position: relative;
-					border-top: 1px solid #fff;
+					border-top: 1px solid $icv_dk_grey;
 					font-size: 14px;
 					font-weight: 500;
 					padding: 5px 0;
 					height: 21px;
+					&.error{
+						border-top: 1px solid $dk_red;
+					}
 				}
 
 				textarea:focus{
 					height: 200px;
 				}
 				button{
+					position: relative;
+					z-index: 10;
 					transition: background 0.2s;
 					background: transparent;
 					border-radius: 8px;
-					border: 1px solid #ED6565;
-					color: #fff;
+					border: 1px solid $icv_green;
+					color: $icv_dk_grey;
 					font-family: 'Quicksand', sans-serif;
 					font-size: 18px;
 					font-weight: 300;
-					margin-top: 14px;
+					margin-top: 8px;
 					padding: 2px 14px;
 				}
 				button:hover{
-					background-color: #BC4747;
+					color: #fff;
+					background-color: $icv_green;
 				}
 				fieldset{
 					margin: 0;
 					padding: 0;
 					border: none;
+				}
+				.error{
+					color: $dk_red;
+					font-size: 0.8rem;
+					position: relative;
+					margin-top: 0;
 				}
 			}
 			.light{
