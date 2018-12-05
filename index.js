@@ -33,7 +33,7 @@ $(function() {
 				what: document.getElementById("what").value,
 				where: document.getElementById("postcode").value,
 				nocontact: document.getElementById("contact").value,
-				url: document.window.origin,
+				url: window.location.origin,
 				time: d.toLocaleString()
 			}),
 			success: function success(result) {
