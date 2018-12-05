@@ -21,7 +21,28 @@ $(function() {
 	function ajaxSubmit(form){
 
 		// fire ajax here
-		console.log($(form).serialize());
+		//console.log($(form).serialize());
+		$.ajax({
+			url: 'https://22q75fpfs0.execute-api.eu-west-1.amazonaws.com/default/veohrc-widget-api',
+			type: 'POST',
+			contentType: 'application/json',
+			dataType: 'json',
+			data: JSON.stringify({
+				name: document.getElementById("name").value,
+				email: document.getElementById("email").value,
+				what: document.getElementById("what").value,
+				where: document.getElementById("postcode").value,
+				nocontact: document.getElementById("contact").value,
+				url: document.window.origin,
+				time: d.toLocaleString()
+			}),
+			success: function success(result) {
+				console.log(result);
+			},
+			error: function error(xhr, resp, text) {
+				console.log(xhr, resp, text);
+			}
+		});
 
 		// on success
 		ajaxSuccess()
@@ -46,27 +67,7 @@ $(function() {
 	});
 
 	function onSubmit() {
-		$.ajax({
-	    url: 'https://22q75fpfs0.execute-api.eu-west-1.amazonaws.com/default/veohrc-widget-api',
-	    type: 'POST',
-	    contentType: 'application/json',
-	    dataType: 'json',
-	    data: JSON.stringify({
-	      name: document.getElementById("name").value,
-	      email: document.getElementById("email").value,
-	      what: document.getElementById("what").value,
-	      where: document.getElementById("postcode").value,
-				nocontact: document.getElementById("contact").value,
-				url: document.window.origin,
-				time: d.toLocaleString()
-	    }),
-	    success: function success(result) {
-	      console.log(result);
-	    },
-	    error: function error(xhr, resp, text) {
-	      console.log(xhr, resp, text);
-	    }
-	  });
+
 	}
 
 	// grecaptcha.ready(function() {
