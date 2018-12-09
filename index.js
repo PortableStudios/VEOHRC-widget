@@ -32,7 +32,7 @@ $(function() {
 				email: document.getElementById("email").value,
 				what: document.getElementById("what").value,
 				where: document.getElementById("postcode").value,
-				nocontact: document.getElementById("contact").checked,
+				nocontact: document.getElementById("nocontact").checked,
 				url: window.location.origin,
 				time: d.toLocaleString()
 			}),
