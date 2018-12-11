@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>VEOHRC Third Party Widget</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">	
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--
     	need to set up server to use:
     	X-Frame-Options: allow-from https://example.com/
@@ -28,20 +28,20 @@
 				<p class="hidden what_info">Describe what happened, and where it happened. Just a sentence or two is fine!</p>
 				<textarea required name="what_happened" id="what"></textarea>
 				<label><span class="label">Where was it? <small>(Postcode)</small></span><input minlength="4" maxlength="4"  required type="text" id="postcode" name="postcode" value="" placeholder=""></label>
-				<!-- insert Postcode field. consider http://v0.postcodeapi.com.au/suburbs/?q=****&state=vic api 
+				<!-- insert Postcode field. consider http://v0.postcodeapi.com.au/suburbs/?q=****&state=vic api
 					or http://api.geonames.org/postalCodeLookupJSON?formatted=true&placename=*****&country=AU&username=demo&style=full&adminCode1=VIC
 				-->
 			</fieldset>
 			<fieldset class="showconf">
 				<label class="checkbox">
-					<input type="checkbox" name="dont_contact_me" />
+					<input type="checkbox" name="dont_contact_me" id="nocontact" />
 					<small>I do not wish to be contacted</small>
 				</label>
 			<button type="submit" id="submit_form">Report it.</button>
-			<!-- 
+			<!--
 			<button class="g-recaptcha" data-sitekey="6LfGRX0UAAAAAINiXRMozu84LiFGNjdKn-QRwgr4" data-callback="onSubmit" type="submit" id="submit_form">Report it.</button> -->
 		</form>
-		
+
 		<p class="submitted">
 			<strong>Thank you!</strong> Your report has been submitted. You will be sent a copy of your report.
 		</p>
@@ -60,7 +60,9 @@
 			</p>
 		</footer>
 	</main>
-  	<script src="./index.js"></script>	
+  	<script src="./index.js"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.3/iframeResizer.contentWindow.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
 </body>
 </html>
