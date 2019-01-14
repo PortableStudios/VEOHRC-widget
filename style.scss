@@ -11,10 +11,26 @@ $orig_txt: #fff;
 $orig_btn: #ED6565;
 
 
-$icv_lt_grey: #f7f7f7;
-$icv_green: #51ab75;
-$icv_dk_grey: #545454;
+// $bg: #f7f7f7;
+// $hilight: #51ab75;
+// $text: #545454;
+// $dk_red: #ED6565;
+
+// $main-max-width: 644px;
+// $main-margin: 0 auto;
+// $main-padding: 8px;
+
+
+// VASS styles
+$bg: #d7f0f6;
+$bg: #ffffff;
+$hilight: #00a4ca;
+$text: #333333;
 $dk_red: #ED6565;
+
+$main-max-width: 644px;
+$main-margin: 0;
+$main-padding: 2rem 8px;
 
 html{
 	margin: 0;
@@ -24,14 +40,14 @@ html{
 		padding: 0;
 		-webkit-font-smoothing: antialiased;
   		-moz-osx-font-smoothing: grayscale;
-		background-color: $icv_lt_grey;
-		color: $icv_dk_grey;
+		background-color: $bg;
+		color: $text;
 		font-family: 'Quicksand', sans-serif;
 		main{
-			max-width: 284px;
+			max-width: $main-max-width;
 			height: auto;
-			padding: 8px;
-			margin: 0 auto;
+			padding: $main-padding;
+			margin: $main-margin;
 			img.f_left{
 				float: left;
 				padding-right: 8px;
@@ -120,8 +136,8 @@ html{
 					width: 100%;
 					height: 30px;
 					border: none;
-					border-bottom: 1px solid $icv_dk_grey;
-					color: $icv_dk_grey;
+					border-bottom: 1px solid $text;
+					color: $text;
 					font-family: 'Quicksand', sans-serif;
 					font-size: 18px;
 					font-weight: 300;
@@ -134,7 +150,7 @@ html{
 				textarea{
 					transition: height .2s;
 					position: relative;
-					border-top: 1px solid $icv_dk_grey;
+					border-top: 1px solid $text;
 					font-size: 14px;
 					font-weight: 500;
 					padding: 5px 0;
@@ -154,8 +170,8 @@ html{
 					transition: background 0.2s;
 					background: transparent;
 					border-radius: 8px;
-					border: 1px solid $icv_green;
-					color: $icv_dk_grey;
+					border: 1px solid $hilight;
+					color: $text;
 					font-family: 'Quicksand', sans-serif;
 					font-size: 18px;
 					font-weight: 300;
@@ -164,7 +180,7 @@ html{
 				}
 				button:hover{
 					color: #fff;
-					background-color: $icv_green;
+					background-color: $hilight;
 				}
 				fieldset{
 					margin: 0;
