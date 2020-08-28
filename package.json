@@ -9,10 +9,11 @@
   "dependencies": {
     "autoprefixer": "^8.1.0",
     "bootstrap": "^4.0.0",
+    "global": "^4.4.0",
     "jquery": "^3.3.1",
     "jquery-validation": "^1.19.0",
     "node-sass": "^4.7.2",
-    "parcel": "^1.10.3"
+    "parcel": "^1.12.4"
   },
   "keywords": [],
   "author": "",
