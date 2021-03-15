@@ -4,11 +4,13 @@
   "description": "",
   "scripts": {
     "start": "parcel index.html",
-    "build": "rimraf ./dist && parcel build index.html --public-url ./"
+    "build": "rimraf ./dist && parcel build index.html --public-url ./",
+    "test": "start-server-and-test 'serve ./dist' 5000 'cypress run'"
   },
   "dependencies": {
     "autoprefixer": "^8.1.0",
     "bootstrap": "^4.0.0",
+    "cypress": "^6.6.0",
     "global": "^4.4.0",
     "jquery": "^3.3.1",
     "jquery-validation": "^1.19.0",
@@ -19,7 +21,9 @@
   "license": "ISC",
   "devDependencies": {
     "parcel": "^1.12.4",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "serve": "^11.3.2",
+    "start-server-and-test": "^1.12.0"
   },
   "resolutions": {
     "@babel/preset-env": "7.13.8"
