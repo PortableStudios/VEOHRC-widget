@@ -23,7 +23,7 @@ $(function() {
 				time: d.toLocaleString()
 			}),
 			success: function success(result) {
-				ajaxSuccess()
+				ajaxSuccess();
 			},
 			error: function error(xhr, resp, text) {
 				ajaxFail();
