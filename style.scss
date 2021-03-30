@@ -1,206 +1,171 @@
-@import url('https://fonts.googleapis.com/css?family=Quicksand:300,500');
+@font-face {
+  font-family: 'Graphik';
+  font-weight: 400;
+  font-style: normal;
+  src: url("./assets/fonts/graphik/Graphik-Regular.otf") format("opentype");
+}
 
+@font-face {
+  font-family: 'Graphik';
+  font-weight: 500;
+  font-style: normal;
+  src: url("./assets/fonts/graphik/Graphik-Medium.otf") format("opentype");
+}
 
-/*
-TODO:
-match ICV colour scheme
-*/
+@font-face {
+  font-family: 'Graphik';
+  font-weight: 700;
+  font-style: normal;
+  src: url("./assets/fonts/graphik/Graphik-Bold.otf") format("opentype");
+}
 
-$orig_bg: #333;
-$orig_txt: #fff;
-$orig_btn: #ED6565;
+// BREAKPOINTS
+$desktop-width: 960px;
 
+// COLOURS
+$green: #62DEBD;
+$active-green: #4BBE9F;
+$text: #000;
+$red: #B22304;
 
-// $bg: #f7f7f7;
-// $hilight: #51ab75;
-// $text: #545454;
-// $dk_red: #ED6565;
-
-// $main-max-width: 644px;
-// $main-margin: 0 auto;
-// $main-padding: 8px;
-
-
-// VASS styles
-$bg: #d7f0f6;
-$bg: #ffffff;
-$hilight: #00a4ca;
-$text: #333333;
-$dk_red: #ED6565;
-
-$main-max-width: 644px;
-$main-margin: 0;
-$main-padding: 2rem 8px;
-
-html{
+html {
 	margin: 0;
 	padding: 0;
-	body{
+	body {
 		margin: 0;
 		padding: 0;
+		width: 100%;
 		-webkit-font-smoothing: antialiased;
   		-moz-osx-font-smoothing: grayscale;
-		background-color: $bg;
 		color: $text;
-		font-family: 'Quicksand', sans-serif;
-		main{
-			max-width: $main-max-width;
-			height: auto;
-			padding: $main-padding;
-			margin: $main-margin;
-			img.f_left{
-				float: left;
-				padding-right: 8px;
-			}
-			img.f_right{
-				float: right;
-				padding-left: 8px;
-			}
-			h1{
-				font-weight: 300;
+		font-family: 'Graphik', sans-serif;
+		h3 {
+			font-weight: 700;
+			font-size: 20px;
+			margin: 6px 0 20px 0;
+			letter-spacing: 1%;
+			@media all and (min-width: $desktop-width) {
 				font-size: 24px;
-				margin: 0 0 8px;
 			}
-			p{
-				font-size: 14px;
-				margin-bottom: 0;
-				&.intro{
-					margin-bottom: 8px
-				}
-				&.submitted{
-					font-size: 20px;
-					font-weight: 300;
-					display: none;
-					&.show{
-						display: block;
-					}
-				}
-				&.failed{
-					display: none;
-					color: $dk_red;
-				}
+		}
+		p, label {
+			font-size: 16px;
+			line-height: 26px;
+			font-weight: 400;
+		}
+		p {
+			margin-top: 0;
+			margin-bottom: 37px;
+		}
+		label {
+			margin-top: 16px;
+			margin-bottom: 8px;
+		}
+		.submitted {
+			display: none;
+			&.show{
+				display: block;
 			}
-			header, .what_info{
-				max-height: 200px;
-				overflow: hidden;
-				transition: max-height 0.2s;
-				&.hidden{
-					max-height:0px;
-				}
-			}
-			.what_info{
-				margin-top:0;
-			}
-			form{
-				//max-height: 60px;
-				overflow: hidden;
-				label{
+		}
+		.failed {
+			display: none;
+			color: $red;
+			margin: 24px 0;
+		}
+
+		main {
+			height: auto;
+			form {
+				label {
 					display: block;
+					&.error {
+						color: $red;
+						font-weight: 500;
+						margin-top:4px;
+					}
+				}
+				input, textarea {
+					display: block;
+					border: 1.5px solid #585858;
+					border-radius: 4px;
+					box-sizing: border-box;
+					height: 48px;
 					width: 100%;
-					height: 30px;
-					margin-top: 14px;
-					font-size: 18px;
-					font-weight: 300;
-					position: relative;
-					perspective: 100px;
-    				perspective-origin: left;
-					span.label{
-						position: absolute;
-						transition: transform 0.1s;	
-						transform: translate3d(0,0,0);					
+					min-width: 200px;
+					max-width: 500px;
+					font-family: 'Graphik', sans-serif;
+					font-size: 16px;
+					padding: 12px;
+					
+					&:active, &:focus {
+						border: 2px solid #071C53;
+						outline: none;
 					}
-					span.label.focus{
-						transition: transform 0.1s;	
-						transform: translate3d(0,-100%,-50px);
+				}
+				input {
+					&.error {
+						border: 1.5px solid $red;
 					}
-					&.checkbox{
-						position: relative;
-						margin-left:20px;
-						font-size: 1rem;
-						width: calc(100% - 20px);
-						line-height: 30px;
-						input{
-							margin-left: -18px;
+				}
+				textarea {
+					min-height: 104px;
+					&.error {
+						border: 1.5px solid $red;
+					}
+				}
+				button {
+					display: block;
+					background-color: $green;
+					border: 2px solid $green;
+					padding: 11px 22px;
+					font-family: 'Graphik', sans-serif;
+					font-weight: 700;
+					text-decoration-line: underline;
+					border-radius: 4px;
+					cursor: pointer;
+					h4 {
+						font-size: 18px;
+						margin: 0;
+						@media all and (min-width: $desktop-width) {
+							font-size: 20px;
 						}
 					}
 				}
-				input[type="text"],
-				input[type="email"],
-				textarea{
-					position: absolute;
-					top: 0;
-					left: 0;
-					margin: 0;
-					padding: 0;
-					background-color: transparent;
-					width: 100%;
-					height: 30px;
-					border: none;
-					border-bottom: 1px solid $text;
-					color: $text;
-					font-family: 'Quicksand', sans-serif;
-					font-size: 18px;
-					font-weight: 300;
+				button:hover {
+					background-color: #fff;
+					box-shadow: 0px 4px 16px rgba(76, 48, 16, 0.16);
+					border: 2px solid #fff;
+				}
+				button:focus {
+					border: 2px solid #071C53;
+					background: $green;
 					outline: none;
-					background: url('./pen.svg') no-repeat right 5px;
-					&.error{
-						border-bottom: 1px solid $dk_red;
-					}
 				}
-				textarea{
-					transition: height .2s;
-					position: relative;
-					border-top: 1px solid $text;
-					font-size: 14px;
-					font-weight: 500;
-					padding: 5px 0;
-					height: 21px;
-					&.error{
-						border-top: 1px solid $dk_red;
-						top:0;
-					}
+				button:active {
+					background: $active-green;
+					border: 2px solid $active-green;
+					outline: none;
 				}
-
-				textarea:focus{
-					height: 200px;
-				}
-				button{
-					position: relative;
-					z-index: 10;
-					transition: background 0.2s;
-					background: transparent;
-					border-radius: 8px;
-					border: 1px solid $hilight;
-					color: $text;
-					font-family: 'Quicksand', sans-serif;
-					font-size: 18px;
-					font-weight: 300;
-					margin-top: 8px;
-					padding: 2px 14px;
-				}
-				button:hover{
-					color: #fff;
-					background-color: $hilight;
-				}
-				fieldset{
+				.checkbox-container {
 					margin: 0;
-					padding: 0;
-					border: none;
+					display: flex;
+					align-items: center;
 				}
-				.error{
-					color: $dk_red;
-					font-size: 0.8rem;
-					position: relative;
-					margin-top: 0;
-					top: 30px;
+				.checkbox {
+					display: inline;
+					height: 14px;
+					width: 14px;
+					min-width: auto;
+					max-width: auto;
+					margin: 0;
+					cursor: pointer;
 				}
-				#what-error{
-					top:0;
-					height:10px;
+				.checkbox-label {
+					display: inline;
+					padding: 16px 0px 16px 8px;
+					margin: 0;
+					cursor: pointer;
 				}
-			}
-			.light{
-				font-weight: 300;
 			}
 		}
 	}
