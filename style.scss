@@ -60,9 +60,6 @@ html {
 			margin-top: 16px;
 			margin-bottom: 8px;
 		}
-		.form-description {
-			max-width: 600px;
-		}
 		.submitted {
 			display: none;
 			&.show{
@@ -74,100 +71,96 @@ html {
 			color: $red;
 			margin: 24px 0;
 		}
-
-		main {
-			height: auto;
-			form {
-				label {
-					display: block;
-					&.error {
-						color: $red;
-						font-weight: 500;
-						margin-top:4px;
-					}
+		
+		form {
+			label {
+				display: block;
+				&.error {
+					color: $red;
+					font-weight: 500;
+					margin-top:4px;
 				}
-				input, textarea {
-					display: block;
-					border: 1.5px solid #585858;
-					border-radius: 4px;
-					box-sizing: border-box;
-					height: 48px;
-					width: 100%;
-					min-width: 200px;
-					max-width: 600px;
-					font-family: 'Graphik', sans-serif;
-					font-size: 16px;
-					padding: 12px;
-					
-					&:active, &:focus {
-						border: 2px solid #071C53;
-						outline: none;
-					}
-				}
-				input {
-					&.error {
-						border: 1.5px solid $red;
-					}
-				}
-				textarea {
-					min-height: 104px;
-					&.error {
-						border: 1.5px solid $red;
-					}
-				}
-				button {
-					display: block;
-					background-color: $green;
-					border: 2px solid $green;
-					padding: 11px 22px;
-					font-family: 'Graphik', sans-serif;
-					font-weight: 700;
-					text-decoration-line: underline;
-					border-radius: 4px;
-					cursor: pointer;
-					h4 {
-						font-size: 18px;
-						margin: 0;
-						@media all and (min-width: $desktop-width) {
-							font-size: 20px;
-						}
-					}
-				}
-				button:hover {
-					background-color: #fff;
-					box-shadow: 0px 4px 16px rgba(76, 48, 16, 0.16);
-					border: 2px solid #fff;
-				}
-				button:focus {
+			}
+			input, textarea {
+				display: block;
+				border: 1.5px solid #585858;
+				border-radius: 4px;
+				box-sizing: border-box;
+				height: 48px;
+				width: 100%;
+				min-width: 200px;
+				font-family: 'Graphik', sans-serif;
+				font-size: 16px;
+				padding: 12px;
+				
+				&:active, &:focus {
 					border: 2px solid #071C53;
-					background: $green;
 					outline: none;
 				}
-				button:active {
-					background: $active-green;
-					border: 2px solid $active-green;
-					outline: none;
+			}
+			input {
+				&.error {
+					border: 1.5px solid $red;
 				}
-				.checkbox-container {
+			}
+			textarea {
+				min-height: 104px;
+				&.error {
+					border: 1.5px solid $red;
+				}
+			}
+			button {
+				display: block;
+				background-color: $green;
+				border: 2px solid $green;
+				padding: 11px 22px;
+				font-family: 'Graphik', sans-serif;
+				font-weight: 700;
+				text-decoration-line: underline;
+				border-radius: 4px;
+				cursor: pointer;
+				h4 {
+					font-size: 18px;
 					margin: 0;
-					display: flex;
-					align-items: center;
+					@media all and (min-width: $desktop-width) {
+						font-size: 20px;
+					}
 				}
-				.checkbox {
-					display: inline;
-					height: 14px;
-					width: 14px;
-					min-width: auto;
-					max-width: auto;
-					margin: 0;
-					cursor: pointer;
-				}
-				.checkbox-label {
-					display: inline;
-					padding: 16px 0px 16px 8px;
-					margin: 0;
-					cursor: pointer;
-				}
+			}
+			button:hover {
+				background-color: #fff;
+				box-shadow: 0px 4px 16px rgba(76, 48, 16, 0.16);
+				border: 2px solid #fff;
+			}
+			button:focus {
+				border: 2px solid #071C53;
+				background: $green;
+				outline: none;
+			}
+			button:active {
+				background: $active-green;
+				border: 2px solid $active-green;
+				outline: none;
+			}
+			.checkbox-container {
+				margin: 0;
+				display: flex;
+				align-items: center;
+			}
+			.checkbox {
+				display: inline;
+				height: 14px;
+				width: 14px;
+				min-width: auto;
+				max-width: auto;
+				margin: 0;
+				cursor: pointer;
+			}
+			.checkbox-label {
+				display: inline;
+				padding: 16px 0px 16px 8px;
+				margin: 0;
+				cursor: pointer;
 			}
 		}
 	}
