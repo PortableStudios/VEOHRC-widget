@@ -7,6 +7,20 @@ var d = new Date();
 $(function() {
 	function ajaxSubmit(form) {
 
+		const postcode = document.getElementById("postcode").value;
+		const numbers = /^[0-9]+$/;
+
+		if (postcode.length === 4 || postcode.match(numbers)) {
+			$(".postcode-error").fadeOut();
+			$("#postcode").removeClass("error")
+		}
+
+		if (postcode.length !== 4 || !postcode.match(numbers)) {
+			$(".postcode-error").fadeIn();
+			$("#postcode").addClass("error")
+			return;
+		}
+
 		// fire ajax here
 		$.ajax({
 			url: 'https://22q75fpfs0.execute-api.eu-west-1.amazonaws.com/default/veohrc-widget-api',
@@ -27,7 +41,6 @@ $(function() {
 			},
 			error: function error(xhr, resp, text) {
 				ajaxFail();
-				console.log(xhr, resp, text);
 			}
 		});
 	}

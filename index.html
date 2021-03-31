@@ -28,19 +28,22 @@
 				name="what_happened"
 				id="what"
 				required placeholder="Describe what happened, and where it happened. Just a sentence or two is fine!"
-				aria-describedby="Describe what happened, and where it happened. Just a sentence or two is fine!" /></textarea>
+				aria-description="Describe what happened, and where it happened. Just a sentence or two is fine!" /></textarea>
 
 			<label for="postcode" class="label h4">Where was it? - Postcode (required)</label>
 			<input
 				name="postcode"
 				minlength="4"
-				maxlength="4"
 				required
 				type="text"
 				id="postcode"
 				value=""
 				placeholder=""
+				pattern="[0-9]+"
 			>
+			<p class="postcode-error">
+				Please enter a valid postcode
+			</p>
 
 			<div class="checkbox-container">
 				<input type="checkbox" name="dont_contact_me" id="nocontact" class="checkbox" />
