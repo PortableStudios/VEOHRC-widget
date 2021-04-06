@@ -1,5 +1,5 @@
 import './style.scss';
-import $ from "jquery";
+import $, { post } from "jquery";
 import validate from "jquery-validation/dist/jquery.validate.min.js";
 
 var d = new Date();
@@ -7,10 +7,10 @@ var d = new Date();
 $(function() {
 	function ajaxSubmit(form) {
 
-		const postcode = document.getElementById("postcode").value;
+		const postcode = document.getElementById("postcode");
 		const numbers = /^[0-9]+$/;
 
-		if (postcode.length === 4 || postcode.match(numbers)) {
+		if (postcode.value.length === 4 || postcode.value.match(numbers)) {
 			$(".postcode-error").fadeOut();
 			$("#postcode").removeClass("error")
 		}
