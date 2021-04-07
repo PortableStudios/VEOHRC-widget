@@ -15,7 +15,9 @@
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
-		gtag('config', 'UA-8178892-3');
+		gtag('config', 'UA-8178892-3', {
+  		cookie_flags: 'max-age=7200;samesite=none'
+		});
 	</script>
 	<div>
 		<h3>Have you been treated unfairly in Victoria?</h3>
