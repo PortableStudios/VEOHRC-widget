@@ -1,21 +1,29 @@
 import './style.scss';
-import $, { post } from "jquery";
+import $ from "jquery";
 import validate from "jquery-validation/dist/jquery.validate.min.js";
 
 var d = new Date();
 
+const postcode = document.querySelector("#postcode");
+	postcode.addEventListener("keydown", function() {
+		const isNotNumber = isNaN(Number(postcode.value));
+		if (!isNotNumber) {
+			$(".postcode-error").fadeOut();
+			$("#postcode").removeClass("error")
+		} 
+		if (isNotNumber) {
+			$(".postcode-error").fadeIn();
+			$("#postcode").addClass("error")
+			return;
+		}
+	})
+
 $(function() {
 	function ajaxSubmit(form) {
 
-		const postcode = document.getElementById("postcode");
-		const numbers = /^[0-9]+$/;
+		const isNotNumber = isNaN(Number(postcode.value));
 
-		if (postcode.value.length === 4 || postcode.value.match(numbers)) {
-			$(".postcode-error").fadeOut();
-			$("#postcode").removeClass("error")
-		}
-
-		if (postcode.length !== 4 || !postcode.match(numbers)) {
+		if (postcode.value.length !== 4 || isNotNumber) {
 			$(".postcode-error").fadeIn();
 			$("#postcode").addClass("error")
 			return;
