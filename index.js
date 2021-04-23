@@ -2,25 +2,23 @@ import './style.scss';
 import $ from "jquery";
 import validate from "jquery-validation/dist/jquery.validate.min.js";
 
-var d = new Date();
-
+const d = new Date();
 const postcode = document.querySelector("#postcode");
-	postcode.addEventListener("keydown", function() {
-		const isNotNumber = isNaN(Number(postcode.value));
-		if (!isNotNumber) {
-			$(".postcode-error").fadeOut();
-			$("#postcode").removeClass("error")
-		} 
-		if (isNotNumber) {
-			$(".postcode-error").fadeIn();
-			$("#postcode").addClass("error")
-			return;
-		}
-	})
+postcode.addEventListener("keydown", function() {
+	const isNotNumber = isNaN(Number(postcode.value));
+	if (!isNotNumber) {
+		$(".postcode-error").fadeOut();
+		$("#postcode").removeClass("error")
+	} 
+	if (isNotNumber) {
+		$(".postcode-error").fadeIn();
+		$("#postcode").addClass("error")
+		return;
+	}
+})
 
 $(function() {
 	function ajaxSubmit(form) {
-
 		const isNotNumber = isNaN(Number(postcode.value));
 
 		if (postcode.value.length !== 4 || isNotNumber) {
