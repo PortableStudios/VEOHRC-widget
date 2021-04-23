@@ -13,11 +13,14 @@
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-8178892-3"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
+		const hostDomain = window.document.referrer;
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 		gtag('config', 'UA-8178892-3', {
-  		cookie_flags: 'max-age=7200;secure;samesite=none'
+  		cookie_flags: 'max-age=7200;secure;samesite=none',
+			custom_map: {'dimension1': 'Host domain'}
 		});
+		gtag('event', 'host_domain', {'Host domain': hostDomain});
 	</script>
 	<div>
 		<h3>Have you been treated unfairly in Victoria?</h3>
