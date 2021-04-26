@@ -2,15 +2,21 @@ import './style.scss';
 import $ from "jquery";
 import validate from "jquery-validation/dist/jquery.validate.min.js";
 
-const d = new Date();
+const validatePostcode = (postcode) => {
+	const regexFourNumbers = /^[0-9]{4}$/
+	const trimmedPostcode = postcode.trim();
+	const isValidPostcode = trimmedPostcode.match(regexFourNumbers);
+	return isValidPostcode;
+}
+
 const postcode = document.querySelector("#postcode");
-postcode.addEventListener("keydown", function() {
-	const isNotNumber = isNaN(Number(postcode.value));
-	if (!isNotNumber) {
+postcode.addEventListener("keyup", function() {
+	const isValidPostcode = validatePostcode(postcode.value);
+	if (isValidPostcode) {
 		$(".postcode-error").fadeOut();
 		$("#postcode").removeClass("error")
 	} 
-	if (isNotNumber) {
+	if (!isValidPostcode) {
 		$(".postcode-error").fadeIn();
 		$("#postcode").addClass("error")
 		return;
@@ -19,9 +25,9 @@ postcode.addEventListener("keydown", function() {
 
 $(function() {
 	function ajaxSubmit(form) {
-		const isNotNumber = isNaN(Number(postcode.value));
+		const isValidPostcode = validatePostcode(postcode.value);
 
-		if (postcode.value.length !== 4 || isNotNumber) {
+		if (!isValidPostcode) {
 			$(".postcode-error").fadeIn();
 			$("#postcode").addClass("error")
 			return;
@@ -40,7 +46,7 @@ $(function() {
 				where: document.getElementById("postcode").value,
 				nocontact: document.getElementById("nocontact").checked,
 				url: window.location.origin,
-				time: d.toLocaleString()
+				time: (new Date()).toLocaleString()
 			}),
 			success: function success(result) {
 				ajaxSuccess();
