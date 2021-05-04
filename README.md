@@ -9,7 +9,7 @@ Embeddable widget for reporting Human Rights issues without lodging a formal com
 Add the following embed code:
 
 ````html
-<iframe src="https://s3-eu-west-1.amazonaws.com/veohrc-widget/index.html" width="100%" marginheight="0" frameborder="0" id="frame1" scrollable ="no"></iframe><script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.3/iframeResizer.min.js"></script><script type="text/javascript">iFrameResize({ log:true, checkOrigin:false});</script>
+<iframe src="https://s3-eu-west-1.amazonaws.com/veohrc-widget/index.html" width="100%" marginheight="0" height="750px" frameborder="0" id="frame1" scrollable ="no"></iframe><script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.3/iframeResizer.min.js"></script><script type="text/javascript">iFrameResize({ log:true, checkOrigin:false});</script>
 ````
 
 ## Development
