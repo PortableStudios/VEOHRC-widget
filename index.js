@@ -15,7 +15,7 @@ postcode.addEventListener("keyup", function() {
 	if (isValidPostcode) {
 		$(".postcode-error").fadeOut();
 		$("#postcode").removeClass("error")
-	} 
+	}
 	if (!isValidPostcode) {
 		$(".postcode-error").fadeIn();
 		$("#postcode").addClass("error")
@@ -58,8 +58,13 @@ $(function() {
 	}
 
 	function ajaxSuccess(){
-		$("#contact").slideUp()
-	    $(".submitted").fadeIn();
+		$("#contact").slideUp();
+		$(".submitted").fadeIn();
+
+		if (typeof window.dataLayer !== 'undefined') {
+			// CRT form submission
+			window.dataLayer.push('send', 'event', 'community reporting tool form', 'submit');
+		}
 	}
 
 	function ajaxFail(){
