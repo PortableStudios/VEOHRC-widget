@@ -61,9 +61,12 @@ $(function() {
 		$("#contact").slideUp();
 		$(".submitted").fadeIn();
 
-		if (typeof window.dataLayer !== 'undefined') {
-			// CRT form submission
-			window.dataLayer.push('send', 'event', 'community reporting tool form', 'submit');
+		if (typeof window.gtag !== 'undefined') {
+				// CRT form submission
+				window.gtag('event', 'form_submit', {
+					'Host domain': window.document.referrer,
+					'event_category': 'community_reporting_tool'
+				});
 		}
 	}
 

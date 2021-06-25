@@ -21,6 +21,7 @@
 			custom_map: {'dimension1': 'Host domain'}
 		});
 		gtag('event', 'host_domain', {'Host domain': hostDomain});
+		window.gtag = gtag;
 	</script>
 	<div>
 		<h3>Have you been treated unfairly in Victoria?</h3>
@@ -29,7 +30,7 @@
 		</p>
 	</div>
 	<div>
-		<form id="contact" method="post" >
+		<form id="contact" method="post">
 			<label  for="name" class="label h4">Your name</label>
 			<input name="name" id="name" minlength="2" type="text">
 
