@@ -57,7 +57,7 @@ html {
 			margin-bottom: 37px;
 			font-weight: 400;
 		}
-		label {
+		label, .label {
 			margin-top: 16px;
 			margin-bottom: 8px;
 			font-weight: 700;
@@ -81,7 +81,7 @@ html {
 			margin-bottom: 0px;
 		};
 		form {
-			label {
+			label, .label {
 				display: block;
 				&.error {
 					color: $red;
@@ -89,7 +89,7 @@ html {
 					margin-top:4px;
 				}
 			}
-			input, textarea {
+			input:not([type=checkbox]):not([type=radio]), textarea {
 				display: block;
 				border: 1.5px solid #585858;
 				border-radius: 4px;
@@ -169,6 +169,19 @@ html {
 				padding: 16px 0px 16px 8px;
 				margin: 0;
 				cursor: pointer;
+			}
+			.radio-container {
+				margin-top: 10px;
+				margin-bottom: 10px;
+
+				label {
+					font-weight: 400;
+					cursor: pointer;
+				}
+
+				& + .radio-container {
+					margin-top: -5px;
+				}
 			}
 		}
 	}
