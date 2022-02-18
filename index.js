@@ -42,6 +42,7 @@ $(function() {
 			data: JSON.stringify({
 				name: document.getElementById("name").value,
 				email: document.getElementById("email").value,
+				aboriginal_torres_strait_islander: document.querySelector('input[name="aboriginal_torres_strait_islander"]:checked').value || "",
 				what: document.getElementById("what").value,
 				where: document.getElementById("postcode").value,
 				nocontact: document.getElementById("nocontact").checked,
