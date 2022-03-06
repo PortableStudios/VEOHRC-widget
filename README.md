@@ -1,3 +1,7 @@
+# NO LONGER USED AND MAINTAINED
+
+**Migrated to [bitbucket.org/portable/veohrc-widget](https://bitbucket.org/portable/veohrc-widget/src/main/)**
+
 # VEOHRC Community Reporting Tool
 
 Embeddable widget for reporting Human Rights issues without lodging a formal complaint.
